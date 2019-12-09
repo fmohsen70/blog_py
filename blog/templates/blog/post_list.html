@@ -1,19 +1,20 @@
-<html dir=rtl>
-    <head>
-        <title>Django Girls blog</title>
-    </head>
-    <body>    
-
-
+{% extends 'blog/base.html' %}
+{% block content %}
 {% for post in posts %}
     <div>
         <p>تاریخ انتشار: {{ post.published_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
+        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
 {% endfor %}
+{% for product in products %}
+    <div>
+        <h3>نام کالا: {{ product.name }}</h3>
+        <h3>کد کالا: {{ product.code }}</h3>
+        
+    </div>
+{% endfor %}
+{% endblock %}
 
 
-
-    </body>
-</html>

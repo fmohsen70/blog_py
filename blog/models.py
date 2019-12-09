@@ -16,3 +16,13 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Product(models.Model):
+    name = models.CharField(max_length=200)
+    code = models.IntegerField()
+    def publish(m):
+        m.save()
+class Category(models.Model):
+    name = models.CharField(max_length=200)
+    def publish(self):
+        self.save()

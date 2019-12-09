@@ -1,0 +1,21 @@
+<html>
+    <head>
+       
+    </head>
+    <body>    
+{% extends 'blog/base.html' %}
+
+{% block content %}
+{% for pro in product %}
+    <div>
+        <h2>نام کالا: {{ pro.name }}</h2>
+        <h3>کد: {{ pro.code }}</a></h3>
+
+    </div>
+{% endfor %}
+{% endblock %}
+
+
+
+    </body>
+</html>
