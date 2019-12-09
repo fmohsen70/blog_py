@@ -9,20 +9,17 @@
     </head>
     <body>
         <div class="page-header">
-                 {% if user.is_authenticated %}
+{% if user.is_authenticated %}
     <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 {% endif %}
-            <h1><a href="/">ازین پس پایتون</a></h1>
-      
+        <h1><a href="/">ازین پس پایتون</a></h1>      
         </div>
-
         <div class="content container">
             <div class="row">
                 <div class="col-md-12">
-                  {% block content %}
-            {% endblock %}
-                    </div>
-              
+                    {% block content %}
+                    {% endblock %}
+                </div>              
             </div>
         </div>
     </body>

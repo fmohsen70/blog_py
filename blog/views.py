@@ -1,9 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from .models import Post,Product
-from .forms import PostForm
-from django.shortcuts import redirect
+from .forms import PostForm,ProForm
 
 
 
@@ -41,3 +40,27 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+def pro_list(request):
+    product = Product.objects.all()
+    return render(request, 'blog/pro_list.html', {'product':product})    
+def pro_new(request):
+    if request.method == "POST":
+        form = ProForm(request.POST)
+        if form.is_valid():
+            pro = form.save(commit=False)        
+            pro.save()
+            return redirect('pro_list')
+    else:
+        form = ProForm()    
+    return render(request, 'blog/pro_edit.html', {'form': form})
+def pro_edit(request, pk):
+    pro = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = ProForm(request.POST, instance=product)
+        if form.is_valid():
+            pro = form.save(commit=False)
+            pro.save()
+            return redirect('pro_edit', pk=post.pk)
+    else:
+        form = ProForm(instance=post)
+    return render(request, 'blog/pro_edit.html', {'form': form})

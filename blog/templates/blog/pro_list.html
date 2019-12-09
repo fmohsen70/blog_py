@@ -1,15 +1,11 @@
-<html>
-    <head>
-       
-    </head>
-    <body>    
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<h3><a href="{% url 'pro_new' %}">افزودن کالا</a></h3>
 {% for pro in product %}
     <div>
-        <h2>نام کالا: {{ pro.name }}</h2>
-        <h3>کد: {{ pro.code }}</a></h3>
+        <h4>نام کالا: {{ pro.name }}</h4>
+        <h4>کد: {{ pro.code }}</h4>
 
     </div>
 {% endfor %}
@@ -17,5 +13,3 @@
 
 
 
-    </body>
-</html>

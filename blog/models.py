@@ -20,8 +20,10 @@ class Post(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=200)
     code = models.IntegerField()
+    created_date = models.DateTimeField(default=timezone.now)
     def publish(m):
         m.save()
+
 class Category(models.Model):
     name = models.CharField(max_length=200)
     def publish(self):
