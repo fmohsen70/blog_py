@@ -24,6 +24,12 @@ class Product(models.Model):
     def publish(m):
         m.save()
 
+    def __str__(self):
+        return "%s (%s)" % (
+            self.name,
+            ", ".join(Category.name for Category in self.category.all()),
+        )
+
 class Category(models.Model):
     name = models.CharField(max_length=200)
     def publish(self):

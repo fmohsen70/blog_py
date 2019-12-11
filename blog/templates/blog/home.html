@@ -1,0 +1,48 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<style>
+.box {
+	background-color: #56baed;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 5px 20px 40px 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;    
+}
+.box a {
+	color: #ffffff;
+    text-decoration: none;
+    
+}
+.box span {
+	padding-left: 5px;
+}
+</style>
+
+
+<div class="col-md-3">
+	<a href="" class="box">افزودن کالا<span class="glyphicon glyphicon-plus"></span></a >
+</div>
+<div class="col-md-3">
+	<a href="{% url 'pro_list' %}" class="box">گزارش<span class="glyphicon glyphicon-exclamation-sign"></span></a>
+</div>
+<div class="col-md-3">
+	<a href="" class="box">خرید کالا<span class="glyphicon glyphicon-plus"></span></a>
+</div>
+<div class="col-md-3">
+	<a href="{% url 'pro_new' %}" class="box">فروش کالا <span class="glyphicon glyphicon-shopping-cart"></span></a>
+</div>
+{% endblock %}

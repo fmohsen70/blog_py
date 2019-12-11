@@ -1,3 +1,6 @@
+body {
+    font-family: yekan;
+}
 .page-header {
     background-color: #C25100;
     margin-top: 0;
@@ -8,10 +11,7 @@
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
-}
-
-.content {
-    margin-left: 40px;
+    text-align: center;
 }
 
 h1, h2, h3, h4 {
