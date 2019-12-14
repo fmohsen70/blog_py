@@ -1,6 +1,4 @@
-
-
- {% extends 'blog/base.html' %}
+{% extends 'blog/base.html' %}
 {% block content %}
  <style>
  	
@@ -120,7 +118,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text] {
+input[type=text] ,input[type=password]{
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -278,19 +276,19 @@ input[type=text]:placeholder {
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+  
     </div>
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
+    <form method="POST">{% csrf_token %}
+      <input type="text" id="login" class="fadeIn second" name="username" placeholder="نام کاربری">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="رمز عبور">
+      <input type="submit" class="fadeIn fourth" value="ورود">
     </form>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
+      <a class="underlineHover" href="#">فراموشی رمز عبور؟</a>
     </div>
 
   </div>

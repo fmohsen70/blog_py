@@ -34,3 +34,5 @@ class Category(models.Model):
     name = models.CharField(max_length=200)
     def publish(self):
         self.save()
+
+        

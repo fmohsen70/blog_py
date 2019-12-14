@@ -3,7 +3,8 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('login', views.login, name='login'),
+    path('login', views.logins, name='login'),
+    path('logout', views.log_out, name='logout'),
     path('list', views.post_list, name='post_list'),
     path('pro', views.pro_list, name='pro_list'),
     path('pro/new/', views.pro_new, name='pro_new'),
@@ -13,3 +14,4 @@ urlpatterns = [
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
 
 ]
+
