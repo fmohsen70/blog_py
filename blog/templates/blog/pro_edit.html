@@ -7,7 +7,11 @@
     <form method="POST" class="post-form">{% csrf_token %}
         
         <label for="">نام محصول</label>{{form.name}}
+        
 		<label for="">کد محصول</label>{{form.code}}
+		<br>
+		<label for="">دسته بندی</label>{{form.category}}
+		<br>
         <button type="submit" class="save btn btn-default">افزودن</button>
     </form>
 

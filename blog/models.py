@@ -17,22 +17,22 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-class Product(models.Model):
-    name = models.CharField(max_length=200)
-    code = models.IntegerField()
-    created_date = models.DateTimeField(default=timezone.now)
-    def publish(m):
-        m.save()
-
-    def __str__(self):
-        return "%s (%s)" % (
-            self.name,
-            ", ".join(Category.name for Category in self.category.all()),
-        )
-
 class Category(models.Model):
     name = models.CharField(max_length=200)
     def publish(self):
         self.save()
+
+class Product(models.Model):
+    name = models.CharField(max_length=200)
+    code = models.IntegerField()
+    created_date = models.DateTimeField(default=timezone.now)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True)
+  
+    def publish(m):
+        m.save()
+
+
+
+
 
         
